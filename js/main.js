@@ -2,11 +2,11 @@ let allowNextMessage = true,
     messageId = 0,
     backMessageId = 0,
     resultId = 1,
-    MAX_DELAY_MESSAGES = 0;
+    MAX_DELAY_MESSAGES = 3;
 
 MAX_DELAY_MESSAGES *= 1000
 
-let block = document.querySelector('.content');
+let block = document.querySelector('.content-chat');
 
 function isBlockEnd() {
     let blockHeight = block.scrollHeight;
