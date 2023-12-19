@@ -99,7 +99,7 @@ function delayMessages(msg_wrapper, messageId) {
 }
 
 const msg_list = document.querySelectorAll('.msg-wrapper');
-msg_list[msg_list.length - 1].classList.add('stop-msg')
+msg_list[msg_list.length - 1]?.classList?.add('stop-msg')
 
 
 const msg = msg_list[0];
