@@ -9,6 +9,7 @@
   background-color: #f5f5f5;
 }
 
+.btn-selector,
 .btn-selected,
 .btn {
   width: auto;
@@ -38,29 +39,33 @@
   border-radius: 20px 0px 20px 20px;
 }
 
-.btn-active {
-  background-color: greenyellow;
+.btn-selector-active {
+  background-color: #4aaa1c;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
 }
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
@@ -166,6 +171,22 @@
   background-color: green;
 }
 
+.btn-purple {
+  background-color: #7071e8;
+}
+
+.msg-question {
+  background-color: #ffffff;
+  border-radius: 0px 20px 20px 20px;
+  padding: 12px 15px;
+  line-height: 24px;
+}
+
+.btn-selector,
+.btn {
+  margin-top: 10px;
+}
+
 .celebrity-status {
   margin-left: 20px;
 }
@@ -207,15 +228,14 @@
   max-height: 100vh;
   overflow: hidden;
 }
+
 .content-chat::-webkit-scrollbar {
   width: 0;
 }
 
 .msg-wrapper {
-  display: flex;
   align-items: center;
   padding: 20px;
-
   display: none;
 }
 
@@ -223,12 +243,9 @@
   justify-content: flex-start;
 }
 
-.left-msg .msg {
-  background: rgb(203, 203, 255);
-}
-
 .right-msg {
   justify-content: flex-end;
+  gap: 20px;
 }
 
 .animated-letter {
@@ -243,9 +260,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }

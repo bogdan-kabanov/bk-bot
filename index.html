@@ -122,7 +122,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>до 35 лет</button>
                                     <button class="btn operating-btn" next-message>36-45 лет</button>
                                     <button class="btn operating-btn" next-message>46-55 лет</button>
@@ -143,7 +143,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message=9>Мужской</button>
                                     <button class="btn operating-btn" next-message=7>Женский</button>
                                 </div>
@@ -160,7 +160,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -177,7 +177,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -194,7 +194,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Стараюсь вести активный образ
                                         жизни</button>
                                     <button class="btn operating-btn" next-message>Физическая активность
@@ -214,16 +214,14 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Сидячая работа</button>
                                     <button class="btn operating-btn" next-message>Работа статическая стоя</button>
                                     <button class="btn operating-btn" next-message>Частое поднятие тяжестей</button>
                                     <button class="btn operating-btn" next-message>Труд, связанный с постоянной
                                         ходьбой</button>
                                     <button class="btn operating-btn" next-message>Высокая рабочая физическая
-                                        активность,
-                                        тяжелый
-                                        физический труд.</button>
+                                        активность, тяжелый физический труд.</button>
 
                                 </div>
                             </div>
@@ -240,7 +238,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message=17>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -257,7 +255,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Командные игры(футбол,баскетбол,
                                         волейбол)</button>
                                     <button class="btn operating-btn" next-message>Бег</button>
@@ -279,7 +277,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message set-result=2>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -296,7 +294,7 @@
 
                         <div class="msg-wrapper right-msg  stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -313,7 +311,7 @@
 
                         <div class="msg-wrapper right-msg  stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Нет</button>
                                     <button class="btn operating-btn" next-message set-result=1>Ревматоидный
                                         артрит</button>
@@ -333,7 +331,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Нет</button>
                                     <button class="btn operating-btn" next-message>Есть избыточная масса тела</button>
                                 </div>
@@ -343,27 +341,29 @@
                         <div class="msg-wrapper left-msg">
                             <div class="msg">
                                 <p class="msg-question">
-                                    Что вас беспокоит больше? (возможность нескольких ответов)
+                                    Что вас беспокоит больше?
                                 </p>
                             </div>
                         </div>
 
-                        <div class="msg-wrapper right-msg stop-msg">
+                        <div class="msg-wrapper right-msg stop-msg" answerMin=3>
                             <div class="msg">
-                                <div>
-                                    <button class="btn operating-btn" next-message>Интенсивная боль в суставах и
+                                <div class="btn-wrapper">
+                                    <button class="btn-selector">Интенсивная боль в суставах и
                                         позвоночнике</button>
-                                    <button class="btn operating-btn" next-message>Утренняя скованность
+                                    <button class="btn-selector">Утренняя скованность
                                         движений</button>
-                                    <button class="btn operating-btn" next-message>Вечерняя боль и напряжение в
+                                    <button class="btn-selector">Вечерняя боль и напряжение в
                                         мышцах</button>
-                                    <button class="btn operating-btn" next-message>Отек и краснота в области
+                                    <button class="btn-selector">Отек и краснота в области
                                         суставов</button>
-                                    <button class="btn operating-btn" next-message>Простреливающая боль в позвоночнике с
+                                    <button class="btn-selector">Простреливающая боль в позвоночнике с
                                         отдачей
                                         вногу</button>
-                                    <button class="btn operating-btn" next-message>Ограничения в движениях суставов и
+                                    <button class="btn-selector">Ограничения в движениях суставов и
                                         позвоночнике</button>
+
+                                    <button class="btn selector-check btn-purple" next-message=29>Ответить</button>
                                 </div>
                             </div>
                         </div>
@@ -378,7 +378,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -395,7 +395,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Ежедневно</button>
                                     <button class="btn operating-btn" next-message>Около 3-4 раз в неделю</button>
                                     <button class="btn operating-btn" next-message>Около 1 раза в неделю</button>
@@ -414,7 +414,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Неопределенно длительно</button>
                                     <button class="btn operating-btn" next-message> 1-2 Недели</button>
                                     <button class="btn operating-btn" next-message>2-4 дня</button>
@@ -432,7 +432,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Ничего</button>
                                     <button class="btn operating-btn" next-message>Таблетки
                                         противовоспалительные</button>
@@ -452,7 +452,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>Да</button>
                                     <button class="btn operating-btn" next-message>Нет</button>
                                 </div>
@@ -469,7 +469,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" next-message>На 1-2 часа</button>
                                     <button class="btn operating-btn" next-message>На 3-4 часа</button>
                                     <button class="btn operating-btn" next-message>На 5-8 часов</button>
@@ -487,7 +487,7 @@
 
                         <div class="msg-wrapper right-msg stop-msg">
                             <div class="msg stop-msg">
-                                <div>
+                                <div class="btn-wrapper">
                                     <button class="btn operating-btn" result>Сменил 1-2 препарата, без
                                         эффекта</button>
                                     <button class="btn operating-btn" result>Сменил 3-5 препаратов, без

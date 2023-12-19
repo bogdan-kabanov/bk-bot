@@ -50,21 +50,6 @@ function scrollToBottom() {
     });
 }
 
-const btnList = document.querySelectorAll('button')
-btnList.forEach(button => {
-    button.addEventListener('click', () => {
-        const now = new Date();
-        const time = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
-
-        const selectText = button.innerText
-        button.closest('.msg').innerHTML = `<div>
-        <p style="text-align:end">आप</p>
-            <button class="btn-selected">${selectText}</button>
-        <p style="text-align:end">${time}</p>
-        </div>`
-    })
-})
-
 function animationText(text) {
     let animatedText = '';
 
@@ -96,6 +81,7 @@ function delayMessages(msg_wrapper, messageId) {
             setTimeout(function () {
                 msg_wrapper.innerHTML = messageContent
                 delayMessages(nextMessageWrapper, messageId + 1, text);
+                getSelectMultipleAnswers(msg_wrapper)
                 getButtons(msg_wrapper)
                 scrollToBlockEnd()
             }, delay);
@@ -105,6 +91,7 @@ function delayMessages(msg_wrapper, messageId) {
         msg_wrapper.innerHTML = ''
         setTimeout(function () {
             msg_wrapper.innerHTML = messageContent
+            getSelectMultipleAnswers(msg_wrapper)
             getButtons(msg_wrapper)
             scrollToBlockEnd()
         }, 700);
@@ -130,8 +117,79 @@ function getResultId(id) {
     return idResult
 }
 
+const selectedArray = []
+
+function getSelectMultipleAnswers(wrapper) {
+    let btnsSelect = wrapper.querySelectorAll('.btn-selector');
+    btnsSelect.forEach(btnSelect => {
+        btnSelect.addEventListener('click', () => {
+            btnSelect.classList.toggle('btn-selector-active');
+            const index = selectedArray.indexOf(btnSelect.textContent);
+            if (index > -1) {
+                selectedArray.splice(index, 1); // Удалить элемент, если он уже есть в массиве
+            } else {
+                selectedArray.push(btnSelect.textContent); // Добавить элемент, если его нет в массиве
+            }
+
+            console.log(selectedArray);
+        });
+    });
+}
+
+
+
 function getButtons(wrapper) {
     let btns = wrapper.querySelectorAll('.operating-btn');
+    let btnsSelector = document.querySelectorAll('.selector-check');
+
+    btnsSelector.forEach(button => {
+        button.addEventListener('click', () => {
+
+            const answerMin = wrapper.getAttribute('answerMin');
+            if (selectedArray.length >= Number(answerMin)) {
+                const wrapper = button.closest('.msg-wrapper')
+                wrapper.innerHTML = ''
+
+                console.log(selectedArray, answerMin);
+                selectedArray.forEach(select => {
+                    const btnAnswer = document.createElement('button')
+                    btnAnswer.classList.add('btn');
+                    btnAnswer.textContent = select
+                    wrapper.appendChild(btnAnswer)
+                })
+
+                if (button.hasAttribute('set-result')) {
+                    const resultId = button.getAttribute('set-result')
+                    setResultId(resultId)
+                }
+
+                if (button.hasAttribute('result')) {
+                    const nextMessageWrapper = msg_list[getResultId(resultId)]
+                    delayMessages(nextMessageWrapper, getResultId(resultId), text);
+                } else {
+                    let nextMessage;
+
+                    if (button.hasAttribute('next-message')) {
+                        nextMessage = backMessageId
+                    }
+                    if (button.getAttribute('next-message') !== '') {
+                        nextMessage = Number(button.getAttribute('next-message')) - 1;
+                    }
+
+                    console.log(`next message: ${nextMessage}`);
+
+                    const nextMessageWrapper = msg_list[nextMessage]
+                    delayMessages(nextMessageWrapper, nextMessage);
+                }
+
+                selectedArray = []
+            } else {
+                alert(`Нужно выбрать минимум ${answerMin} пункта`);
+                return false;
+            }
+        })
+    })
+
     btns.forEach(button => {
         button.addEventListener('click', (button) => {
             const wrapper = button.target?.closest('.msg-wrapper')
@@ -139,8 +197,7 @@ function getButtons(wrapper) {
 
             const btnAnswer = document.createElement('button')
             btnAnswer.classList.add('btn');
-            btnAnswer.innerText = button.target.innerText
-
+            btnAnswer.textContent = button.target.textContent
             wrapper.appendChild(btnAnswer)
             if (button.target.hasAttribute('set-result')) {
                 const resultId = button.target.getAttribute('set-result')
@@ -152,6 +209,7 @@ function getButtons(wrapper) {
                 delayMessages(nextMessageWrapper, getResultId(resultId), text);
             } else {
                 let nextMessage;
+
                 if (button.target.hasAttribute('next-message')) {
                     nextMessage = backMessageId
                 }
